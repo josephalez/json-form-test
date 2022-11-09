@@ -1,0 +1,1499 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "",
+        "version": "0.0.0"
+    },
+    "paths": {
+        "/api/v1/afp/": {
+            "get": {
+                "operationId": "afp_list",
+                "tags": [
+                    "afp"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AFP"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/afp/{id}/": {
+            "get": {
+                "operationId": "afp_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this AFP.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "afp"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AFP"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/communes/": {
+            "get": {
+                "operationId": "communes_list",
+                "tags": [
+                    "communes"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Commune"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/communes/{id}/": {
+            "get": {
+                "operationId": "communes_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this commune.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "communes"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Commune"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/countries/": {
+            "get": {
+                "operationId": "countries_list",
+                "tags": [
+                    "countries"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Country"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/countries/{id}/": {
+            "get": {
+                "operationId": "countries_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this country.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "countries"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Country"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/customers/": {
+            "post": {
+                "operationId": "customers_create",
+                "tags": [
+                    "customers"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CustomerOnboarding"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CustomerOnboarding"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CustomerOnboarding"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CustomerOnboarding"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/customers/profile_questions/": {
+            "get": {
+                "operationId": "customers_profile_questions_retrieve",
+                "tags": [
+                    "customers"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CustomerOnboarding"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/customers/sign-contracts/": {
+            "post": {
+                "operationId": "customers_sign_contracts_create",
+                "description": "¿Who determines the response status, and in what order?\nAsynchronously\ncustomer A: hello lifeplan, I'm signing these documents.\nlifeplan: ok, gotcha. (200)\nlifeplan (secretly): now I have to send this info to Clever!\nlifeplan (to Clever): hey, customer A signed the contracts!\nClever: ...\nlifeplan (to clever): hey clever!\n\nSynchronously, then retry\ncustomer A: hello lifeplan, I'm signing these documents.\nlifeplan: ok, gotcha. Let me talk to clever first.\nLifeplan (to clever): Hey clever, I have something for you.\nClever: ...\nlifeplan (to Client A): All done! (200)\nlifeplan (secretly): I'll have to retry\nlifeplan (to clever): hey clever!\netc\n\nSynchronously, just fail\ncustomer A: hello lifeplan, I'm signing these documents.\nlifeplan: ok, gotcha. Let me talk to clever first.\nLifeplan (to clever): Hey clever, I have something for you.\nClever: ...\nlifeplan (to Client A): I'm sorry (500)",
+                "tags": [
+                    "customers"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CustomerOnboarding"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CustomerOnboarding"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CustomerOnboarding"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CustomerOnboarding"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/customers/simulate-apv/": {
+            "get": {
+                "operationId": "customers_simulate_apv_retrieve",
+                "tags": [
+                    "customers"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CustomerOnboarding"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/genders/": {
+            "get": {
+                "operationId": "genders_list",
+                "tags": [
+                    "genders"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Gender"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/genders/{id}/": {
+            "get": {
+                "operationId": "genders_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this gender.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "genders"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Gender"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/investment_funds/": {
+            "get": {
+                "operationId": "investment_funds_list",
+                "tags": [
+                    "investment_funds"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/InvestmentFund"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/investment_funds/{id}/": {
+            "get": {
+                "operationId": "investment_funds_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this investment fund.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "investment_funds"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/InvestmentFund"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/regions/": {
+            "get": {
+                "operationId": "regions_list",
+                "tags": [
+                    "regions"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Region"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/regions/{id}/": {
+            "get": {
+                "operationId": "regions_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this region.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "regions"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Region"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/risk-profiles/": {
+            "get": {
+                "operationId": "risk_profiles_list",
+                "tags": [
+                    "risk-profiles"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/RiskProfile"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/risk-profiles/{id}/": {
+            "get": {
+                "operationId": "risk_profiles_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this risk profile.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "risk-profiles"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RiskProfile"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/schema/": {
+            "get": {
+                "operationId": "schema_retrieve",
+                "description": "OpenApi3 schema for this API. Format can be selected via content negotiation.\n\n- YAML: application/vnd.oai.openapi\n- JSON: application/vnd.oai.openapi+json",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "lang",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "af",
+                                "ar",
+                                "ar-dz",
+                                "ast",
+                                "az",
+                                "be",
+                                "bg",
+                                "bn",
+                                "br",
+                                "bs",
+                                "ca",
+                                "cs",
+                                "cy",
+                                "da",
+                                "de",
+                                "dsb",
+                                "el",
+                                "en",
+                                "en-au",
+                                "en-gb",
+                                "eo",
+                                "es",
+                                "es-ar",
+                                "es-co",
+                                "es-mx",
+                                "es-ni",
+                                "es-ve",
+                                "et",
+                                "eu",
+                                "fa",
+                                "fi",
+                                "fr",
+                                "fy",
+                                "ga",
+                                "gd",
+                                "gl",
+                                "he",
+                                "hi",
+                                "hr",
+                                "hsb",
+                                "hu",
+                                "hy",
+                                "ia",
+                                "id",
+                                "ig",
+                                "io",
+                                "is",
+                                "it",
+                                "ja",
+                                "ka",
+                                "kab",
+                                "kk",
+                                "km",
+                                "kn",
+                                "ko",
+                                "ky",
+                                "lb",
+                                "lt",
+                                "lv",
+                                "mk",
+                                "ml",
+                                "mn",
+                                "mr",
+                                "my",
+                                "nb",
+                                "ne",
+                                "nl",
+                                "nn",
+                                "os",
+                                "pa",
+                                "pl",
+                                "pt",
+                                "pt-br",
+                                "ro",
+                                "ru",
+                                "sk",
+                                "sl",
+                                "sq",
+                                "sr",
+                                "sr-latn",
+                                "sv",
+                                "sw",
+                                "ta",
+                                "te",
+                                "tg",
+                                "th",
+                                "tk",
+                                "tr",
+                                "tt",
+                                "udm",
+                                "uk",
+                                "ur",
+                                "uz",
+                                "vi",
+                                "zh-hans",
+                                "zh-hant"
+                            ]
+                        }
+                    }
+                ],
+                "tags": [
+                    "schema"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/vnd.oai.openapi+json": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": {}
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": {}
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/unit-kinds/": {
+            "get": {
+                "operationId": "unit_kinds_list",
+                "tags": [
+                    "unit-kinds"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/UnitType"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/unit-kinds/{id}/": {
+            "get": {
+                "operationId": "unit_kinds_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this unit kind.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "unit-kinds"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnitType"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/users/authenticate/": {
+            "post": {
+                "operationId": "users_authenticate_create",
+                "tags": [
+                    "users"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/users/get-user-data/": {
+            "get": {
+                "operationId": "users_get_user_data_retrieve",
+                "tags": [
+                    "users"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/worker-kinds/": {
+            "get": {
+                "operationId": "worker_kinds_list",
+                "tags": [
+                    "worker-kinds"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/WorkerType"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/worker-kinds/{id}/": {
+            "get": {
+                "operationId": "worker_kinds_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this worker kind.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "worker-kinds"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WorkerType"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AFP": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Nombre",
+                        "maxLength": 20
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/StatusEnum"
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "status"
+                ]
+            },
+            "Address": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "commune": {
+                        "type": "integer"
+                    },
+                    "street": {
+                        "type": "string",
+                        "maxLength": 50
+                    },
+                    "number": {
+                        "type": "string",
+                        "maxLength": 20
+                    },
+                    "unit_type": {
+                        "type": "integer",
+                        "nullable": true,
+                        "title": "Unit kind"
+                    },
+                    "unit_number": {
+                        "type": "string",
+                        "maxLength": 10
+                    }
+                },
+                "required": [
+                    "commune",
+                    "id",
+                    "number",
+                    "street"
+                ]
+            },
+            "Commune": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Nombre",
+                        "description": "The name of the commune",
+                        "maxLength": 100
+                    },
+                    "region": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "region"
+                ]
+            },
+            "Country": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "common_name": {
+                        "type": "string",
+                        "description": "The common name of the country",
+                        "maxLength": 100
+                    },
+                    "official_name": {
+                        "type": "string",
+                        "description": "The official name of the country",
+                        "maxLength": 100
+                    },
+                    "alpha_3_code": {
+                        "type": "string",
+                        "description": "ISO 3166-1 alpha-3 code.",
+                        "maxLength": 3
+                    }
+                },
+                "required": [
+                    "alpha_3_code",
+                    "common_name",
+                    "id",
+                    "official_name"
+                ]
+            },
+            "CreateUserWithoutPassword": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    }
+                },
+                "required": [
+                    "email",
+                    "id"
+                ]
+            },
+            "Customer": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "date_of_birth": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "gender": {
+                        "type": "string",
+                        "maxLength": 5
+                    },
+                    "net_salary": {
+                        "type": "integer",
+                        "maximum": 2147483647,
+                        "minimum": 0
+                    },
+                    "rut": {
+                        "type": "string"
+                    },
+                    "serial_number": {
+                        "type": "string",
+                        "maxLength": 9
+                    },
+                    "nationality": {
+                        "type": "integer"
+                    },
+                    "phone": {
+                        "type": "integer",
+                        "maximum": 2147483647,
+                        "minimum": 0
+                    },
+                    "profession": {
+                        "type": "string",
+                        "maxLength": 20
+                    },
+                    "worker_type": {
+                        "type": "integer",
+                        "title": "Worker kind"
+                    },
+                    "foreign_payer": {
+                        "type": "boolean",
+                        "title": "Foreign taxpayer"
+                    },
+                    "afp": {
+                        "type": "integer"
+                    },
+                    "user": {
+                        "$ref": "#/components/schemas/CreateUserWithoutPassword"
+                    },
+                    "address": {
+                        "$ref": "#/components/schemas/Address"
+                    }
+                },
+                "required": [
+                    "address",
+                    "afp",
+                    "date_of_birth",
+                    "foreign_payer",
+                    "id",
+                    "nationality",
+                    "net_salary",
+                    "phone",
+                    "profession",
+                    "rut",
+                    "serial_number",
+                    "user",
+                    "worker_type"
+                ]
+            },
+            "CustomerOnboarding": {
+                "type": "object",
+                "properties": {
+                    "customer": {
+                        "$ref": "#/components/schemas/Customer"
+                    },
+                    "investment_fund": {
+                        "type": "integer"
+                    },
+                    "risk_profile": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": {}
+                        }
+                    }
+                },
+                "required": [
+                    "customer",
+                    "investment_fund",
+                    "risk_profile"
+                ]
+            },
+            "Gender": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "gender": {
+                        "type": "string",
+                        "maxLength": 50
+                    }
+                },
+                "required": [
+                    "gender",
+                    "id"
+                ]
+            },
+            "InvestmentFund": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Nombre",
+                        "maxLength": 50
+                    }
+                },
+                "required": [
+                    "id",
+                    "name"
+                ]
+            },
+            "Region": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Nombre",
+                        "description": "The name of the region",
+                        "maxLength": 100
+                    },
+                    "short_name": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "A short name of the region",
+                        "maxLength": 100
+                    }
+                },
+                "required": [
+                    "id",
+                    "name"
+                ]
+            },
+            "RiskProfile": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Nombre",
+                        "maxLength": 15
+                    },
+                    "summary": {
+                        "type": "string",
+                        "maxLength": 15
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "summary"
+                ]
+            },
+            "StatusEnum": {
+                "enum": [
+                    "sample"
+                ],
+                "type": "string"
+            },
+            "UnitType": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Nombre",
+                        "maxLength": 12
+                    }
+                },
+                "required": [
+                    "id",
+                    "name"
+                ]
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "password": {
+                        "type": "string",
+                        "title": "Contraseña",
+                        "maxLength": 128
+                    },
+                    "last_login": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true,
+                        "title": "Último inicio de sesión"
+                    },
+                    "is_superuser": {
+                        "type": "boolean",
+                        "title": "Estado de superusuario",
+                        "description": "Indica que este usuario tiene todos los permisos sin asignárselos explícitamente."
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true,
+                        "description": "creation date"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true,
+                        "description": "edition date"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "title": "Dirección de correo electrónico",
+                        "maxLength": 254
+                    },
+                    "first_name": {
+                        "type": "string",
+                        "title": "Nombre",
+                        "maxLength": 30
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "title": "Apellidos",
+                        "maxLength": 30
+                    },
+                    "is_staff": {
+                        "type": "boolean",
+                        "title": "Es staff",
+                        "description": "Indica si el usuario puede entrar en este sitio de administración."
+                    },
+                    "is_active": {
+                        "type": "boolean",
+                        "title": "Activo",
+                        "description": "Indica si el usuario debe ser tratado como activo. Desmarque esta opción en lugar de borrar la cuenta."
+                    },
+                    "clever_user_id": {
+                        "type": "string",
+                        "maxLength": 15
+                    },
+                    "date_joined": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Fecha de alta",
+                        "description": "The date this user was created in the database"
+                    },
+                    "bearer_token": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "groups": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer",
+                            "title": "Grupos"
+                        },
+                        "title": "Grupos",
+                        "description": "Los grupos a los que pertenece este usuario. Un usuario tendrá todos los permisos asignados a cada uno de sus grupos."
+                    },
+                    "user_permissions": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer",
+                            "title": "Permisos de usuario"
+                        },
+                        "title": "Permisos de usuario",
+                        "description": "Permisos específicos para este usuario."
+                    }
+                },
+                "required": [
+                    "created_at",
+                    "email",
+                    "id",
+                    "password",
+                    "updated_at"
+                ]
+            },
+            "WorkerType": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Nombre",
+                        "maxLength": 50
+                    }
+                },
+                "required": [
+                    "id",
+                    "name"
+                ]
+            }
+        },
+        "securitySchemes": {
+            "basicAuth": {
+                "type": "http",
+                "scheme": "basic"
+            },
+            "cookieAuth": {
+                "type": "apiKey",
+                "in": "cookie",
+                "name": "sessionid"
+            }
+        }
+    }
+}
